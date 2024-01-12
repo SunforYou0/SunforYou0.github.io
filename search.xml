@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试文档</title>
-    <url>/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p>爱上对方反反复复反反复复反反复复反反复复反反复复；管理局爱的借口方案里SD卡感觉拉萨的健康<br>按理说独立开发工具啊说的感觉哦i网儿哦i文件</p>
-<p>爱上对方反反复复反反复复反反复复反反复复反反复复；管理局爱的借口方案里SD卡感觉拉萨的健康<br>按理说独立开发工具啊说的感觉哦i网儿哦i文件</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>文档</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随想01</title>
-    <url>/2024/01/12/%E9%9A%8F%E6%83%B301/</url>
-    <content><![CDATA[<p>水电费</p>
-<span id="more"></span>
-<p>文件夹里</p>
-]]></content>
-      <categories>
-        <category>随想</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2024/01/10/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -42,5 +17,30 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>测试文档</title>
+    <url>/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p>爱上对方反反复复反反复复反反复复反反复复反反复复；管理局爱的借口方案里SD卡感觉拉萨的健康<br>按理说独立开发工具啊说的感觉哦i网儿哦i文件</p>
+<p>爱上对方反反复复反反复复反反复复反反复复反反复复；管理局爱的借口方案里SD卡感觉拉萨的健康<br>按理说独立开发工具啊说的感觉哦i网儿哦i文件</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑夜随想</title>
+    <url>/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[<p>短诗一首</p>
+<span id="more"></span>
+<p>夜晚的车灯把我变成俩个影子，<br>一个向左，<br>一个向右。<br>而我在中间，<br>找不到前进的方向。</p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
   </entry>
 </search>
