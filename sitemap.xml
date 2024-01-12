@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/google3e81ee6efa252534.html</loc>
+    
+    <lastmod>2024-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/</loc>
     
     <lastmod>2024-01-12</lastmod>
