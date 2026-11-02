@@ -3,11 +3,11 @@
   <title>云中小屋</title>
   
   <subtitle>技术博客</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://sunforyou.top/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://sunforyou.top/"/>
   <updated>2024-01-11T15:42:55.852Z</updated>
-  <id>http://example.com/</id>
+  <id>https://sunforyou.top/</id>
   
   <author>
     <name>SunYu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>测试文档</title>
-    <link href="http://example.com/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/"/>
-    <id>http://example.com/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</id>
+    <link href="https://sunforyou.top/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/"/>
+    <id>https://sunforyou.top/2024/01/11/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</id>
     <published>2024-01-11T15:39:15.000Z</published>
     <updated>2024-01-11T15:42:55.852Z</updated>
     
@@ -35,19 +35,19 @@
     
     
     
-    <category term="mysql" scheme="http://example.com/categories/mysql/"/>
+    <category term="mysql" scheme="https://sunforyou.top/categories/mysql/"/>
     
     
-    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://sunforyou.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="文档" scheme="http://example.com/tags/%E6%96%87%E6%A1%A3/"/>
+    <category term="文档" scheme="https://sunforyou.top/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2024/01/10/hello-world/"/>
-    <id>http://example.com/2024/01/10/hello-world/</id>
+    <link href="https://sunforyou.top/2024/01/10/hello-world/"/>
+    <id>https://sunforyou.top/2024/01/10/hello-world/</id>
     <published>2024-01-10T12:10:56.619Z</published>
     <updated>2024-01-10T12:10:56.619Z</updated>
     
@@ -67,8 +67,8 @@
   
   <entry>
     <title>黑夜随想</title>
-    <link href="http://example.com/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/"/>
-    <id>http://example.com/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/</id>
+    <link href="https://sunforyou.top/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/"/>
+    <id>https://sunforyou.top/2023/10/22/%E9%BB%91%E5%A4%9C%E9%9A%8F%E6%83%B3/</id>
     <published>2023-10-21T16:00:35.000Z</published>
     <updated>2024-01-12T01:11:51.994Z</updated>
     
@@ -77,7 +77,7 @@
     
     
     
-    <category term="随想" scheme="http://example.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    <category term="随想" scheme="https://sunforyou.top/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
   </entry>
