@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">不同 Temperature 取值下的输出概率分布</title>
+  <desc id="fig-desc">左图为 T 取 0.1、0.5、1、2、10 时三个 token 的概率柱状图；右图为三条概率随 T 变化的曲线，横轴为对数刻度，最终收敛到均匀分布 1/3。</desc>
+  <rect width="1000" height="460" fill="#ffffff"/>
+  <g font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Noto Sans SC',sans-serif">
+
+    <!-- ================= 左图 ================= -->
+    <text x="70" y="22" font-size="15" font-weight="600" fill="#333">不同 T 下的输出概率分布</text>
+
+    <g stroke="#ececec" stroke-width="1" stroke-dasharray="3 3">
+      <line x1="70" y1="40" x2="510" y2="40"/>
+      <line x1="70" y1="120" x2="510" y2="120"/>
+      <line x1="70" y1="200" x2="510" y2="200"/>
+      <line x1="70" y1="280" x2="510" y2="280"/>
+    </g>
+
+    <g stroke="#c8c8c8" stroke-width="1">
+      <line x1="70" y1="40" x2="70" y2="360"/>
+      <line x1="70" y1="360" x2="510" y2="360"/>
+    </g>
+
+    <g font-size="11" fill="#777" text-anchor="end">
+      <text x="62" y="44">1.0</text>
+      <text x="62" y="124">0.75</text>
+      <text x="62" y="204">0.5</text>
+      <text x="62" y="284">0.25</text>
+      <text x="62" y="364">0</text>
+    </g>
+
+    <text transform="translate(22,200) rotate(-90)" font-size="12" fill="#555" text-anchor="middle">概率 p</text>
+
+    <!-- 柱：T = 0.1 -->
+    <rect x="81" y="40" width="18" height="320" fill="#2E6FDB"/>
+    <rect x="105" y="359.9" width="18" height="0.1" fill="#E8833A"/>
+    <text x="106" y="352" font-size="10" fill="#999">B、C ≈ 0</text>
+
+    <!-- 柱：T = 0.5 -->
+    <rect x="169" y="82.6" width="18" height="277.4" fill="#2E6FDB"/>
+    <rect x="193" y="322.5" width="18" height="37.5" fill="#E8833A"/>
+    <rect x="217" y="354.9" width="18" height="5.1" fill="#3AA66B"/>
+
+    <!-- 柱：T = 1 -->
+    <rect x="257" y="147.1" width="18" height="212.9" fill="#2E6FDB"/>
+    <rect x="281" y="281.7" width="18" height="78.3" fill="#E8833A"/>
+    <rect x="305" y="331.2" width="18" height="28.8" fill="#3AA66B"/>
+
+    <!-- 柱：T = 2 -->
+    <rect x="345" y="197.9" width="18" height="162.1" fill="#2E6FDB"/>
+    <rect x="369" y="261.7" width="18" height="98.3" fill="#E8833A"/>
+    <rect x="393" y="300.4" width="18" height="59.6" fill="#3AA66B"/>
+
+    <!-- 柱：T = 10 -->
+    <rect x="433" y="242.5" width="18" height="117.5" fill="#2E6FDB"/>
+    <rect x="457" y="253.7" width="18" height="106.3" fill="#E8833A"/>
+    <rect x="481" y="263.8" width="18" height="96.2" fill="#3AA66B"/>
+
+    <!-- p_A 数值标注 -->
+    <g font-size="10.5" fill="#2E6FDB" text-anchor="middle">
+      <text x="90" y="34">1.00</text>
+      <text x="178" y="77">0.87</text>
+      <text x="266" y="141">0.67</text>
+      <text x="354" y="192">0.51</text>
+      <text x="442" y="237">0.37</text>
+    </g>
+
+    <g font-size="12" fill="#555" text-anchor="middle">
+      <text x="114" y="380">0.1</text>
+      <text x="202" y="380">0.5</text>
+      <text x="290" y="380">1</text>
+      <text x="378" y="380">2</text>
+      <text x="466" y="380">10</text>
+    </g>
+    <text x="290" y="404" font-size="12" fill="#555" text-anchor="middle">Temperature T</text>
+
+    <!-- ================= 右图 ================= -->
+    <text x="600" y="22" font-size="15" font-weight="600" fill="#333">三条概率随 T 的变化（对数横轴）</text>
+
+    <g stroke="#ececec" stroke-width="1" stroke-dasharray="3 3">
+      <line x1="600" y1="40" x2="940" y2="40"/>
+      <line x1="600" y1="120" x2="940" y2="120"/>
+      <line x1="600" y1="200" x2="940" y2="200"/>
+      <line x1="600" y1="280" x2="940" y2="280"/>
+    </g>
+
+    <g stroke="#c8c8c8" stroke-width="1">
+      <line x1="600" y1="40" x2="600" y2="360"/>
+      <line x1="600" y1="360" x2="940" y2="360"/>
+    </g>
+
+    <!-- 均匀分布参考线 1/3 -->
+    <line x1="600" y1="253.3" x2="940" y2="253.3" stroke="#b0b0b0" stroke-width="1" stroke-dasharray="6 4"/>
+    <text x="944" y="257" font-size="10" fill="#999">1/3</text>
+
+    <!-- 曲线 -->
+    <polyline points="600,40.0 651.2,42.2 718.8,82.6 770,147.1 821.2,197.9 888.8,231.4 940,242.5" fill="none" stroke="#2E6FDB" stroke-width="2.2" stroke-linejoin="round"/>
+    <polyline points="600,360.0 651.2,357.9 718.8,322.5 770,281.7 821.2,261.7 888.8,254.7 940,253.7" fill="none" stroke="#E8833A" stroke-width="2.2" stroke-linejoin="round"/>
+    <polyline points="600,360.0 651.2,360.0 718.8,354.9 770,331.2 821.2,300.4 888.8,273.8 940,263.8" fill="none" stroke="#3AA66B" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <g fill="#2E6FDB">
+      <circle cx="600" cy="40.0" r="2.4"/>
+      <circle cx="651.2" cy="42.2" r="2.4"/>
+      <circle cx="718.8" cy="82.6" r="2.4"/>
+      <circle cx="770" cy="147.1" r="2.4"/>
+      <circle cx="821.2" cy="197.9" r="2.4"/>
+      <circle cx="888.8" cy="231.4" r="2.4"/>
+      <circle cx="940" cy="242.5" r="2.4"/>
+    </g>
+    <g fill="#E8833A">
+      <circle cx="600" cy="360.0" r="2.4"/>
+      <circle cx="651.2" cy="357.9" r="2.4"/>
+      <circle cx="718.8" cy="322.5" r="2.4"/>
+      <circle cx="770" cy="281.7" r="2.4"/>
+      <circle cx="821.2" cy="261.7" r="2.4"/>
+      <circle cx="888.8" cy="254.7" r="2.4"/>
+      <circle cx="940" cy="253.7" r="2.4"/>
+    </g>
+    <g fill="#3AA66B">
+      <circle cx="600" cy="360.0" r="2.4"/>
+      <circle cx="651.2" cy="360.0" r="2.4"/>
+      <circle cx="718.8" cy="354.9" r="2.4"/>
+      <circle cx="770" cy="331.2" r="2.4"/>
+      <circle cx="821.2" cy="300.4" r="2.4"/>
+      <circle cx="888.8" cy="273.8" r="2.4"/>
+      <circle cx="940" cy="263.8" r="2.4"/>
+    </g>
+
+    <g font-size="12" fill="#555" text-anchor="middle">
+      <text x="600" y="380">0.1</text>
+      <text x="718.8" y="380">0.5</text>
+      <text x="770" y="380">1</text>
+      <text x="821.2" y="380">2</text>
+      <text x="940" y="380">10</text>
+    </g>
+    <text x="770" y="404" font-size="12" fill="#555" text-anchor="middle">Temperature T（对数刻度）</text>
+
+    <!-- ================= 图例 ================= -->
+    <g font-size="12" fill="#444">
+      <line x1="310" y1="433" x2="334" y2="433" stroke="#2E6FDB" stroke-width="2.2"/>
+      <circle cx="322" cy="433" r="2.4" fill="#2E6FDB"/>
+      <text x="340" y="437">A（z = 2.0）</text>
+
+      <line x1="440" y1="433" x2="464" y2="433" stroke="#E8833A" stroke-width="2.2"/>
+      <circle cx="452" cy="433" r="2.4" fill="#E8833A"/>
+      <text x="470" y="437">B（z = 1.0）</text>
+
+      <line x1="570" y1="433" x2="594" y2="433" stroke="#3AA66B" stroke-width="2.2"/>
+      <circle cx="582" cy="433" r="2.4" fill="#3AA66B"/>
+      <text x="600" y="437">C（z = 0.0）</text>
+    </g>
+
+  </g>
+</svg>
