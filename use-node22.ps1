@@ -7,7 +7,7 @@
 #   pnpm -v      # 9.x
 #   pnpm dev     # 启动开发服务器
 
-$toolsDir = Join-Path (Split-Path -Parent $PSScriptRoot) ".tools"
+$toolsDir = Join-Path $PSScriptRoot ".tools"
 
 $env:Path = "$toolsDir\node22;$toolsDir;$env:Path"
 $env:npm_config_cache = Join-Path $toolsDir "npm-cache"
