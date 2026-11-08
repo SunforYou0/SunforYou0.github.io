@@ -13,6 +13,7 @@
 - 已构建并通过预览检查：`pnpm build` 成功，`dist/` 已生成；两篇文章、about、数学公式、图片、RSS、sitemap、Pagefind 均验证通过
 - 部署：GitHub Actions（`.github/workflows/deploy.yml`）已成功运行，`https://sunforyou.top` 已切换到新站
 - 按你的要求未做旧链接兼容，`/2023/10/22/黑夜随想/`、`/archives/`、`/atom.xml` 等旧地址会 404
+- 2026-11-08：文章结构改为「每篇一个目录 + `index.md`」，文章配图从 `public/images/` 迁到文章目录内、正文改用相对路径（文章 URL 未变），以适配 Obsidian 写作；详见 [`OBSIDIAN-WRITING.md`](OBSIDIAN-WRITING.md)
 
 ---
 
@@ -243,7 +244,7 @@ lang?: string          // 仅在和站点语言不同时填
 
 ### 5.2 两篇文章的具体改法
 
-**`source/_posts/黑夜随想.md` → `src/content/posts/night-thoughts.md`**
+**`source/_posts/黑夜随想.md` → `src/content/posts/night-thoughts/index.md`**
 
 ```markdown
 ---
@@ -264,7 +265,7 @@ draft: false
 
 （删掉 `<!--more-->`；“短诗一首”可作为描述，也可以直接删掉。）
 
-**`source/_posts/为什么Temperature设为0后，相同的输入下模型的输出还是随机的？.md` → `src/content/posts/llm-temperature-zero-randomness.md`**
+**`source/_posts/为什么Temperature设为0后，相同的输入下模型的输出还是随机的？.md` → `src/content/posts/llm-temperature-zero-randomness/index.md`**
 
 ```markdown
 ---
@@ -290,29 +291,30 @@ draft: false
 
 ### 5.4 图片与静态资源
 
-文章里的图片用的是绝对路径：
+迁移前文章里的图片用的是绝对路径（Hexo 的 `source/images/` 对应站点 `/images/`）：
 
 ```markdown
 ![不同 Temperature 取值下的概率分布](/images/temperature.svg)
 ```
 
-处理方式二选一：
+当时准备了两种处理方式：
 
-```powershell
-# 方式 1（最省事）：保持绝对路径，把原图片全部复制到 public/images/
-New-Item -ItemType Directory -Force E:\MyBlog-astro\public\images | Out-Null
-Copy-Item E:\MyBlog\source\images\* E:\MyBlog-astro\public\images\ -Recurse
-Copy-Item E:\MyBlog\themes\ayer\source\images\* E:\MyBlog-astro\public\images\ -Recurse
-```
+1. 保持绝对路径，把旧图片复制到 `public/images/` —— 迁移初期用过，2026-11-08 已撤销；
+2. 用文章资源目录，交给 Astro 处理 —— **最终采用**。
 
-```markdown
-<!-- 方式 2：用文章资源目录，交给 Astro 优化（新文章推荐） -->
+现在每篇文章是一个目录，配图放在同目录的 `assets/` 下：
+
+```text
 src/content/posts/llm-temperature-zero-randomness/
   index.md
-  temperature.svg
+  assets/temperature.svg
 ```
 
-正文中写成 `![...](./temperature.svg)`，封面用 frontmatter 的 `image: ./cover.jpg`。
+正文写成 `![...](./assets/temperature.svg)`，封面用 frontmatter 的 `image: ./assets/cover.jpg`。
+
+> `index.md` 中的 `/index` 会被 Astro 从 slug 自动去掉，文章 URL 仍是 `/posts/llm-temperature-zero-randomness/`，无需重定向。
+> 全站共用图片（banner、头像、favicon）仍留在 `public/images/`，用 `/images/...` 绝对路径。
+> 这种结构也方便用 Obsidian 写作，配置见 [`OBSIDIAN-WRITING.md`](OBSIDIAN-WRITING.md)。
 
 另外记得把站点级静态文件搬过去：
 
@@ -549,7 +551,7 @@ git push -u origin main --force
 - [ ] 首页两篇文章卡片标题、日期、标签、分类、摘要正确
 - [ ] 两篇文章详情页：正文完整、代码块高亮、TOC 正常
 - [ ] 第二篇文章所有公式渲染正确（重点：`cases`、`\xrightarrow`、表格里的 `$`）
-- [ ] `/images/temperature.svg` 图片能显示、能点开灯箱
+- [ ] 文章内图片（第二篇的 `src/content/posts/llm-temperature-zero-randomness/assets/temperature.svg`，正文用相对路径引用）能显示、能点开灯箱
 - [ ] `/about/` 内容正确，头像/昵称/GitHub/邮箱链接正确
 - [ ] `/archive/` 能按标签、分类筛选，按年份分组正常
 - [ ] 搜索：`pnpm build` 后搜索中英文关键词都有结果（中文效果重点看）

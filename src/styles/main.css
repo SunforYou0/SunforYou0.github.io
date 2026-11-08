@@ -140,6 +140,11 @@
     height: var(--collapsedHeight);
 }
 
+/* 目录栏只属于文章页：列表 / 归档 / 关于页隐藏空目录，避免出现空的玻璃面板 */
+body:not(.has-toc) #toc-wrapper {
+    display: none;
+}
+
 .custom-md spoiler {
   @apply bg-[var(--codeblock-bg)] hover:bg-transparent px-1 py-0.5 overflow-hidden rounded-md transition-all duration-150;
 

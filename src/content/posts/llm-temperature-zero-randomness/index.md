@@ -1,10 +1,13 @@
 ---
-title: "为什么Temperature设为0后，相同的输入下模型的输出还是随机的？"
+title: 为什么Temperature设为0后，相同的输入下模型的输出还是随机的？
 published: 2026-11-03T20:30:13
-description: "即使 temperature=0，大模型的输出也可能变化。本文从 softmax 原理、采样随机性、浮点与推理引擎实现三层解释随机性从何而来。"
-tags: ["Agent", "LLM", "Temperature"]
-category: "Agent/LLM"
-draft: false
+description: 即使 temperature=0，大模型的输出也可能变化。本文从 softmax 原理、采样随机性、浮点与推理引擎实现三层解释随机性从何而来。
+tags:
+  - Agent
+  - LLM
+  - Temperature
+category: Agent/LLM
+draft: true
 ---
 ## 1 引子
 在调用大模型时，很多开发者都会把 temperature 设为 0，期待同样的输入得到完全一致的输出。但实测却发现，即使输入一字不差，模型返回的结果仍可能不同：措辞变了，有时答案本身也不一样。按理说 temperature=0 意味着每次都选择概率最高的 token，随机性究竟从何而来？本文就从这一常见困惑出发，逐层拆解这个问题。
@@ -54,7 +57,7 @@ $$
 
 最后一行是参照系：$1/3=0.3333$ 即均匀分布，而 $\ln 3\approx1.0986$ 是三个 token 上熵的上限。
 
-![不同 Temperature 取值下的概率分布](/images/temperature.svg)
+![不同 Temperature 取值下的概率分布](./assets/temperature.svg)
 
 *图 1：左图为 $T$ 取 0.1、0.5、1、2、10 时三个 token 的概率分布；右图为三条概率随 $T$ 的变化曲线，横轴为对数刻度，灰色虚线为均匀分布 $1/3$。*
 

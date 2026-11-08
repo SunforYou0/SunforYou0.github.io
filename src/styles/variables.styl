@@ -93,6 +93,37 @@ define({
   --toc-badge-bg: oklch(0.89 0.050 var(--hue)) var(--btn-regular-bg)
   --toc-btn-hover: oklch(0.926 0.015 var(--hue)) oklch(0.22 0.02 var(--hue))
   --toc-btn-active: oklch(0.90 0.015 var(--hue)) oklch(0.25 0.02 var(--hue))
-  --toc-width: calc((100vw - var(--page-width)) / 2 - 1rem)
   --toc-item-active: oklch(0.70 0.13 var(--hue)) oklch(0.35 0.07 var(--hue))
 })
+
+/* 响应式布局尺寸（页面宽度 / 左右栏 / 目录宽度）
+   - <1024px：单栏（沿用原布局）
+   - 1024–1359px：两栏（左栏 + 正文），页面最宽 75rem
+   - 1360–1535px：三栏，页面铺满视口，左栏 12rem、目录 14rem
+   - ≥1536px：三栏，左栏 14rem、目录 18rem
+   - 文章页（body.has-toc）页面最宽 108rem(1728px)，其余页面保持 75rem */
+:root
+  --page-width 75rem
+  --page-pad 1rem
+  --col-gap 1rem
+  --sidebar-w 17.5rem
+  --toc-w 14rem
+  --toc-rail 0rem
+
+@media (min-width: 1024px)
+  :root
+    --page-pad clamp(1rem, 2vw, 2rem)
+    --sidebar-w 13rem
+
+@media (min-width: 1360px)
+  :root
+    --sidebar-w 12rem
+    --toc-w 14rem
+  body.has-toc
+    --page-width 108rem
+    --toc-rail calc(var(--toc-w) + var(--col-gap))
+
+@media (min-width: 1536px)
+  :root
+    --sidebar-w 14rem
+    --toc-w 18rem

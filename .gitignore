@@ -30,3 +30,7 @@ yarn.lock
 # ide
 .idea
 *.iml
+
+# Obsidian vault config（vault 指向 src/content）
+.obsidian/
+.trash/

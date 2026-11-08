@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        // 文章页三栏布局的起始宽度（1360–1535 使用紧凑侧栏）
+        wide: "1360px",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
