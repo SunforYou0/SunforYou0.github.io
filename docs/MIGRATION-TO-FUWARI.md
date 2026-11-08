@@ -6,9 +6,9 @@
 
 **实施状态（2026-11-07）：全部完成，已上线。**
 
-- 新项目：`E:\MyBlog\astro`（Fuwari，Astro 5.13.10）
-- 便携 Node 22：`E:\MyBlog\astro\.tools\node22`；pnpm 9：`E:\MyBlog\astro\.tools\pnpm9`
-- 启动方式：在 `E:\MyBlog\astro` 里执行 `. .\use-node22.ps1`，然后 `pnpm dev` / `pnpm preview`
+- 新项目：`E:\MyBlog`（Fuwari，Astro 5.13.10）
+- 便携 Node 22：`E:\MyBlog\.tools\node22`；pnpm 9：`E:\MyBlog\.tools\pnpm9`
+- 启动方式：在 `E:\MyBlog` 里执行 `. .\use-node22.ps1`，然后 `pnpm dev` / `pnpm preview`
 - 旧站备份：本地 Hexo 已按要求清理；GitHub 上旧 main 保留为 `hexo-legacy` 分支，可随时回滚
 - 已构建并通过预览检查：`pnpm build` 成功，`dist/` 已生成；两篇文章、about、数学公式、图片、RSS、sitemap、Pagefind 均验证通过
 - 部署：GitHub Actions（`.github/workflows/deploy.yml`）已成功运行，`https://sunforyou.top` 已切换到新站
