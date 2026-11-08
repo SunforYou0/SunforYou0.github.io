@@ -26,12 +26,18 @@ const isPublic = src.startsWith("/");
 
 // TODO temporary workaround for images dynamic import
 // https://github.com/withastro/astro/issues/3373
+// 注意：glob 必须限定为图片扩展名。之前写成 "../../**" 会把 src 下所有文件
+//（包括 src/styles/*.css / *.styl）都当作动态模块引入，导致 CSS 被打包进来
+// 且处理顺序不确定，CI 上会报 "The `link` class does not exist"。
 // biome-ignore lint/suspicious/noImplicitAnyLet: <check later>
 let img;
 if (isLocal) {
-	const files = import.meta.glob<ImageMetadata>("../../**", {
-		import: "default",
-	});
+	const files = import.meta.glob<ImageMetadata>(
+		"../../**/*.{png,jpg,jpeg,webp,avif,gif,svg}",
+		{
+			import: "default",
+		},
+	);
 	let normalizedPath = path
 		.normalize(path.join("../../", basePath, src))
 		.replace(/\\/g, "/");
