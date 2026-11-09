@@ -1,5 +1,6 @@
+import avatarImage from "./assets/images/ayer.png";
+import bannerImage from "./assets/images/spacestudio.webp";
 import type {
-	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
@@ -17,7 +18,9 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "/images/spacestudio.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		// Imported from `src/assets` so Astro optimizes it and emits a hashed,
+		// cache-friendly URL. A `/public` path or remote URL still works as a fallback.
+		src: bannerImage,
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
@@ -46,7 +49,8 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/images/ayer.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	// Imported from `src/assets`, so the avatar goes through Astro's image pipeline.
+	avatar: avatarImage,
 	name: "SunYu",
 	bio: "新手程序员的技术博客与随想记录",
 	links: [
@@ -69,8 +73,6 @@ export const licenseConfig: LicenseConfig = {
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
 };
 
-export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
-	// Please select a dark theme, as this blog theme currently only supports dark background color
-	theme: "github-dark",
-};
+// Re-exported for backwards compatibility; `astro.config.mjs` imports the module
+// directly to avoid loading the image imports above in a plain Node context.
+export { expressiveCodeConfig } from "./expressive-code.config";

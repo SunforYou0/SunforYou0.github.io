@@ -63,7 +63,7 @@ deno run -A npm:create-fuwari@latest
 title: Mi Primer Post en el Blog
 published: 2023-09-09
 description: Esta es la primera entrada de mi nuevo blog con Astro.
-image: /images/cover.jpg
+image: ./cover.jpg
 tags: [Foo, Bar]
 category: Front-end
 draft: false

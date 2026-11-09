@@ -1,3 +1,4 @@
+import type { ImageMetadata } from "astro";
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
 
 export type SiteConfig = {
@@ -22,7 +23,8 @@ export type SiteConfig = {
 	};
 	banner: {
 		enable: boolean;
-		src: string;
+		/** An imported asset from `src/assets`, or a path/URL string as a fallback. */
+		src: ImageMetadata | string;
 		position?: "top" | "center" | "bottom";
 		credit: {
 			enable: boolean;
@@ -61,7 +63,7 @@ export type NavBarConfig = {
 };
 
 export type ProfileConfig = {
-	avatar?: string;
+	avatar?: ImageMetadata | string;
 	name: string;
 	bio?: string;
 	links: {
@@ -89,7 +91,7 @@ export type BlogPostData = {
 	description: string;
 	tags: string[];
 	draft?: boolean;
-	image?: string;
+	image?: ImageMetadata | string;
 	category?: string;
 	prevTitle?: string;
 	prevSlug?: string;

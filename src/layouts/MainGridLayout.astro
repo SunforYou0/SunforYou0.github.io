@@ -17,7 +17,6 @@ import Layout from "./Layout.astro";
 
 interface Props {
 	title?: string;
-	banner?: string;
 	description?: string;
 	lang?: string;
 	setOGTypeArticle?: boolean;
@@ -26,7 +25,6 @@ interface Props {
 
 const {
 	title,
-	banner,
 	description,
 	lang,
 	setOGTypeArticle,
@@ -41,7 +39,7 @@ const mainPanelTop = siteConfig.banner.enable
 	: "5.5rem";
 ---
 
-<Layout title={title} banner={banner} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle} hasToc={headings.length > 0}>
+<Layout title={title} description={description} lang={lang} setOGTypeArticle={setOGTypeArticle} hasToc={headings.length > 0}>
 
 <!-- Navbar -->
 <slot slot="head" name="head"></slot>
@@ -54,7 +52,7 @@ const mainPanelTop = siteConfig.banner.enable
 <!-- Banner -->
 {siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
     <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
-                  src={siteConfig.banner.src} position={siteConfig.banner.position}
+                  src={siteConfig.banner.src} position={siteConfig.banner.position} priority={true}
     >
     </ImageWrapper>
 </div>}

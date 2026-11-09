@@ -55,7 +55,6 @@ const content = `---
 title: ${yamlQuote(title)}
 published: ${getDate()}
 description: ''
-image: ''
 tags: []
 category: ''
 draft: true
