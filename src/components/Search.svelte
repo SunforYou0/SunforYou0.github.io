@@ -31,6 +31,15 @@ const fakeResult: SearchResult[] = [
 	},
 ];
 
+// Pagefind returns excerpts as HTML with `<mark>` highlights, so they have to be
+// rendered with `{@html}`. Normalize `<mark>` and drop every other tag, so a
+// stray tag can never be interpreted as markup.
+const sanitizeExcerpt = (html: string): string =>
+	html
+		.replace(/<mark[^>]*>/gi, "<mark>")
+		.replace(/<\/mark\s*>/gi, "</mark>")
+		.replace(/<(?!\/?mark\b)[^>]*>/gi, "");
+
 const togglePanel = () => {
 	const panel = document.getElementById("search-panel");
 	panel?.classList.toggle("float-panel-closed");
@@ -181,7 +190,7 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
                 {item.meta.title}<Icon icon="fa6-solid:chevron-right" class="transition text-[0.75rem] translate-x-1 my-auto text-[var(--primary)]"></Icon>
             </div>
             <div class="transition text-sm text-50">
-                {@html item.excerpt}
+                {@html sanitizeExcerpt(item.excerpt)}
             </div>
         </a>
     {/each}
